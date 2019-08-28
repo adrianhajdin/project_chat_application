@@ -1,0 +1,41 @@
+body {
+  height: 100vh;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rectangle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 50%;
+  width: 40%;
+  border: 1px solid black;
+}
+
+.messages {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+form {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+}
+
+#commonSearchTerm {
+  width: 80%;
+}
+
+#searchButton {
+  width: 20%;
+}

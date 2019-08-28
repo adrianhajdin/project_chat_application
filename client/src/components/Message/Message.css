@@ -1,0 +1,12 @@
+.message {
+  background-color: blue;
+  padding: 10px;
+  color: white;
+  border-radius: 20px;
+  width: 50%;
+  margin: 5px 0;
+}
+
+.message:nth-child(even) {
+  background-color: red;
+}
