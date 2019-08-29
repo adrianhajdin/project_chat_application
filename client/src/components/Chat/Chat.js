@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 
 import Message from '../Message/Message';
@@ -10,23 +10,26 @@ const Chat = () => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
 
-  socket.on('RECEIVE_MESSAGE', (data) => {
-    setMessages([...messages, data]);
+  useEffect(() => {
+    socket.on('enter', (welcomeMessage) => {
+      console.log(welcomeMessage);
+    });
 
-  });
+    socket.on('receiveMessage', (message) => {
+      console.log('receiveMessage', message)
+      setMessages([...messages, message]);
+    });
 
-  socket.on('INIT', (data) => {
-    console.log(data);
-  })
 
-  const handleChange = (event) => {
-    setMessage(event.target.value)
-  }
+    return () => socket.off('receiveMessage');
+  }, [messages])
+
+  const handleChange = ({ target: { value } }) => setMessage(value);
 
   const sendMessage = (event) => {
     event.preventDefault();
 
-    socket.emit('SEND_MESSAGE', message);
+    socket.emit('sendMessage', message);
 
     setMessage('');
   }
