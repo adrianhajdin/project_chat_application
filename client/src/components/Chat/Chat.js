@@ -15,6 +15,10 @@ const Chat = () => {
       console.log(welcomeMessage);
     });
 
+    socket.on('message', (message) => {
+      console.log(message);
+    });
+
     socket.on('receiveMessage', (message) => {
       console.log('receiveMessage', message)
       setMessages([...messages, message]);
@@ -29,7 +33,9 @@ const Chat = () => {
   const sendMessage = (event) => {
     event.preventDefault();
 
-    socket.emit('sendMessage', message);
+    socket.emit('sendMessage', message, () => {
+      console.log('Message sucessfully sent!')
+    });
 
     setMessage('');
   }

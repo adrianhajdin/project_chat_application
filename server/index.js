@@ -13,16 +13,19 @@ const PORT = process.env.port || 5000;
 app.use(router);
 
 io.on('connection', (socket) => {
-  console.log('enter');
-  io.emit('enter', 'Welcome everybody!');
+  io.emit('message', 'Welcome everybody!');
 
-  socket.on('sendMessage', (message) => {
+  socket.broadcast.emit('message', 'A new user has joined!');
+
+  socket.on('sendMessage', (message, callback) => {
       io.emit('receiveMessage', message);
+
+      callback();
     })
 
-      socket.on('disconnect', () => {
-        console.log('exit');
-      })
+  socket.on('disconnect', () => {
+    io.emit('message', 'User has left!');
+  })
 });
 
 server.listen(PORT, () => console.log(`Server has started on port ${PORT}`));
