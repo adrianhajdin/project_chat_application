@@ -19,7 +19,12 @@ const Chat = ({ location }) => {
 
     socket = io(ENDPOINT);
 
-    socket.emit('join', params);
+    socket.emit('join', params, (error) => {
+      if(error) {
+        alert(error);
+      }
+    });
+
   }, [ENDPOINT, location.search]);
 
   useEffect(() => {
