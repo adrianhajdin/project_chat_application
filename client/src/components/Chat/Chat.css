@@ -26,12 +26,6 @@ body {
   flex-direction: column;
 }
 
-form {
-  width: 100%;
-  display: inline-flex;
-  justify-content: center;
-}
-
 #commonSearchTerm {
   width: 80%;
 }

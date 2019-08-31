@@ -12,16 +12,24 @@ const PORT = process.env.port || 5000;
 
 app.use(router);
 
-io.on('connection', (socket) => {
-  io.emit('message', 'Welcome everybody!');
+io.on('connect', (socket) => {
+  console.log('New WebSocket connection')
 
-  socket.broadcast.emit('message', 'A new user has joined!');
+  socket.on('join', ({ name, room }) => {
+    socket.join(room);
+
+    socket.emit('message', `Welcome ${name}, to room ${room}`);
+    socket.broadcast.to(room).emit('message', `${name} has joined!`);
+  });
 
   socket.on('sendMessage', (message, callback) => {
-      io.emit('receiveMessage', message);
+    console.log('REACH SEND MESSAGE')
+    io.emit('receiveMessage', message);
 
-      callback();
-    })
+    io.to('test').emit('message', message);
+
+    callback();
+  });
 
   socket.on('disconnect', () => {
     io.emit('message', 'User has left!');

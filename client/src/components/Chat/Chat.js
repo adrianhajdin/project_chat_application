@@ -1,34 +1,43 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 
+import queryString from 'query-string';
+
 import Message from '../Message/Message';
-import './Chat.css'
 
-const socket = io('localhost:5000');
+import './Chat.css';
 
-const Chat = () => {
+let socket;
+
+const Chat = ({ location }) => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const ENDPOINT = 'localhost:5000';
+
 
   useEffect(() => {
-    socket.on('enter', (welcomeMessage) => {
-      console.log(welcomeMessage);
-    });
+    const params = queryString.parse(location.search);
 
+    socket = io(ENDPOINT);
+
+    socket.emit('join', params);
+
+    console.log('[REACH INITIALIZATION USE EFFECT]')
+  }, [ENDPOINT, location.search]);
+
+  useEffect(() => {
     socket.on('message', (message) => {
-      console.log(message);
+      console.log(message)
     });
 
     socket.on('receiveMessage', (message) => {
-      console.log('receiveMessage', message)
       setMessages([...messages, message]);
     });
 
+    console.log('[REACH EVENTS USE EFFECT]')
 
-    return () => socket.off('receiveMessage');
+    return () => socket.off();
   }, [messages])
-
-  const handleChange = ({ target: { value } }) => setMessage(value);
 
   const sendMessage = (event) => {
     event.preventDefault();
@@ -49,7 +58,7 @@ const Chat = () => {
         </div>
 
         <form className="form">
-          <input id="commonSearchTerm" type="text" placeholder="Message" value={message} onChange={handleChange} />
+          <input id="commonSearchTerm" type="text" placeholder="Message" value={message} onChange={({ target: { value } }) => setMessage(value)} />
           <button id="searchButton" type="submit" onClick={sendMessage}>Send</button>
         </form>
       </div>
