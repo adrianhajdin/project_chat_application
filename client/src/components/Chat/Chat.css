@@ -9,27 +9,24 @@ body {
   justify-content: center;
 }
 
-.rectangle {
+.paper {
   display: flex;
+  padding: 20px;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 50%;
-  width: 40%;
-  border: 1px solid black;
+  min-height: 50%;
+  width: 60%;
 }
 
 .messages {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-#commonSearchTerm {
   width: 80%;
 }
 
-#searchButton {
-  width: 20%;
+.form {
+  width: 80%;
+}
+
+.input {
+  margin-bottom: 10px;
 }

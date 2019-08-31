@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 
+import { Container, Paper, Input, Button } from '@material-ui/core';
+
 import queryString from 'query-string';
 
 import Message from '../Message/Message';
@@ -27,10 +29,6 @@ const Chat = ({ location }) => {
 
   useEffect(() => {
     socket.on('message', (message) => {
-      console.log(message)
-    });
-
-    socket.on('receiveMessage', (message) => {
       setMessages([...messages, message]);
     });
 
@@ -50,19 +48,19 @@ const Chat = ({ location }) => {
   }
 
   return (
-    <div className="container">
-      <div className="rectangle">
+    <Container className="container">
+      <Paper elevation={6} className="paper">
         <div className="messages">
           <h1>Messages</h1>
           {messages.map((message, i) => <Message key={i} message={message} />)}
         </div>
 
         <form className="form">
-          <input id="commonSearchTerm" type="text" placeholder="Message" value={message} onChange={({ target: { value } }) => setMessage(value)} />
-          <button id="searchButton" type="submit" onClick={sendMessage}>Send</button>
+          <Input className="input" fullWidth type="text" placeholder="Message" value={message} onChange={({ target: { value } }) => setMessage(value)} />
+          <Button color="primary" variant="outlined" fullWidth type="submit" onClick={sendMessage}>Send</Button>
         </form>
-      </div>
-    </div>
+      </Paper>
+    </Container>
   );
 }
 
