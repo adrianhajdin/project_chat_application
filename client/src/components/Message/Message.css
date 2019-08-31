@@ -1,5 +1,5 @@
 .message {
-  background-color: blue;
+  background-color: #0078FF;
   padding: 10px;
   color: white;
   border-radius: 20px;
@@ -9,5 +9,5 @@
 }
 
 .message:nth-child(even) {
-  background-color: red;
+  background-color: #00C6FF;
 }
