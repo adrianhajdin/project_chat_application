@@ -10,7 +10,7 @@ import './Chat.css';
 let socket;
 
 const Chat = ({ location }) => {
-  const [message, setMessage] = useState({ text: '', delivered: false, read: false });
+  const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const ENDPOINT = 'localhost:5000';
 
@@ -43,8 +43,7 @@ const Chat = ({ location }) => {
     event.preventDefault();
 
     socket.emit('sendMessage', message, () => {
-      setMessage({ ...message, text: message.text, delivered: true});
-      setMessage({ text: ''});
+      setMessage('');
     });
   }
 
@@ -53,11 +52,11 @@ const Chat = ({ location }) => {
       <Paper elevation={6} className="paper">
         <div className="messages">
           <Typography variant="h4" gutterBottom>Messages</Typography>
-          {messages.map(({text}, i) => <Message key={i} message={text} />)}
+          {messages.map((message, i) => <Message key={i} message={message} />)}
         </div>
 
         <form className="form">
-          <Input className="input" fullWidth type="text" placeholder="Message" value={message.text} onChange={({ target: { value } }) => setMessage({text: value})} />
+          <Input className="input" fullWidth type="text" placeholder="Message" value={message} onChange={({ target: { value } }) => setMessage(value)} />
           <Button color="primary" variant="outlined" fullWidth type="submit" onClick={sendMessage}>Send</Button>
         </form>
       </Paper>
