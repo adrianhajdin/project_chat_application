@@ -32,6 +32,10 @@ const Chat = ({ location }) => {
       setMessages([...messages, message ]);
     });
 
+    socket.on('roomData', ({room, users}) => {
+      console.log(room, users)
+    })
+
     return () => {
       socket.emit('disconnect');
 
