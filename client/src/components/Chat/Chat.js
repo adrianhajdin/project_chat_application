@@ -11,21 +11,25 @@ import './Chat.css';
 let socket;
 
 const Chat = ({ location }) => {
+  // const [name, setName] = useState('');
+  const [room, setRoom] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const ENDPOINT = 'localhost:5000';
 
   useEffect(() => {
-    const params = queryString.parse(location.search);
+    const { name, room } = queryString.parse(location.search);
 
     socket = io(ENDPOINT);
 
-    socket.emit('join', params, (error) => {
+    setRoom(room);
+    // setName(name)
+
+    socket.emit('join', { name, room }, (error) => {
       if(error) {
         alert(error);
       }
     });
-
   }, [ENDPOINT, location.search]);
 
   useEffect(() => {
@@ -33,7 +37,7 @@ const Chat = ({ location }) => {
       setMessages([...messages, message ]);
     });
 
-    socket.on('roomData', ({room, users}) => {
+    socket.on('roomData', ({ room, users }) => {
       console.log(room, users)
     })
 
@@ -53,9 +57,9 @@ const Chat = ({ location }) => {
   return (
     <div className="outerContainer">
       <div className="container">
-          <InfoBar />
+          <InfoBar room={room} />
           <Messages messages={messages} />
-          <Input sendMessage={sendMessage} setMessage={setMessage} message={message}/>
+          <Input sendMessage={sendMessage} setMessage={setMessage} message={message} />
       </div>
     </div>
   );
