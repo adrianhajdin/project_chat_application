@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Container, Paper, Input, Button, Typography } from '@material-ui/core';
 import queryString from 'query-string';
 import io from "socket.io-client";
 
-import Message from '../Message/Message';
+import Messages from '../Messages/Messages';
+import InfoBar from '../InfoBar/InfoBar';
+import Input from '../Input/Input';
 
 import './Chat.css';
 
@@ -46,25 +47,17 @@ const Chat = ({ location }) => {
   const sendMessage = (event) => {
     event.preventDefault();
 
-    socket.emit('sendMessage', message, () => {
-      setMessage('');
-    });
+    socket.emit('sendMessage', message, () => setMessage(''));
   }
 
   return (
-    <Container className="container">
-      <Paper elevation={6} className="paper">
-        <div className="messages">
-          <Typography variant="h4" gutterBottom>Messages</Typography>
-          {messages.map((message, i) => <Message key={i} message={message} />)}
-        </div>
-
-        <form className="form">
-          <Input className="input" fullWidth type="text" placeholder="Message" value={message} onChange={({ target: { value } }) => setMessage(value)} />
-          <Button color="primary" variant="outlined" fullWidth type="submit" onClick={sendMessage}>Send</Button>
-        </form>
-      </Paper>
-    </Container>
+    <div className="outerContainer">
+      <div className="container">
+          <InfoBar />
+          <Messages messages={messages} />
+          <Input sendMessage={sendMessage} setMessage={setMessage} message={message}/>
+      </div>
+    </div>
   );
 }
 

@@ -1,0 +1,15 @@
+
+input[type=text] {
+  border: none;
+  border-radius: 0;
+  padding: 5%;
+  width: 100%;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+
+form {
+  border-top: 1px solid #D3D3D3;
+}

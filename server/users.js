@@ -11,7 +11,7 @@ const addUser = ({ id, name, room }) => {
     }
   }
 
-  // check for existing user
+  // Check for existing user
   const existingUser = users.find((user) => {
     return user.room === room && user.name === name;
   })
@@ -22,7 +22,7 @@ const addUser = ({ id, name, room }) => {
     }
   }
 
-  // STtore user
+  // Store user
   const user = { id, name, room }
   users.push(user);
   return { user }

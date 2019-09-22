@@ -1,0 +1,37 @@
+.messageBoxOne {
+  background: #F3F3F3;
+  border-radius: 20px;
+  padding: 5px 20px;
+  color: white;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: auto;
+}
+
+.messageTextOne {
+  font-family: Helvetica;
+  width: 100%;
+  font-size: 12px;
+  color: #353535;
+  letter-spacing: 0;
+  float: left;
+}
+
+.messageBoxTwo {
+  background: #2979FF;
+  border-radius: 14px 14px 0 14px;
+}
+
+.messageTextTwo {
+  font-family: Helvetica;
+  font-size: 12px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+}
+
+.timeMessage {
+  font-family: Helvetica;
+  font-size: 10px;
+  color: #828282;
+  letter-spacing: 0.3px;
+}
