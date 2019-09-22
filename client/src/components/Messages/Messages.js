@@ -5,7 +5,7 @@ import './Messages.css';
 
 const Messages = ({ messages }) => (
   <div className="messages">
-    {messages.map((message, i) => <Message key={i} message={message} />)}
+    {messages.map((message, i) => <div><Message key={i} message={message} /></div>)}
   </div>
 );
 
