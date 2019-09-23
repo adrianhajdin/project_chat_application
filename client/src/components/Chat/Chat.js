@@ -11,7 +11,7 @@ import './Chat.css';
 let socket;
 
 const Chat = ({ location }) => {
-  // const [name, setName] = useState('');
+  const [name, setName] = useState('');
   const [room, setRoom] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
@@ -23,7 +23,7 @@ const Chat = ({ location }) => {
     socket = io(ENDPOINT);
 
     setRoom(room);
-    // setName(name)
+    setName(name)
 
     socket.emit('join', { name, room }, (error) => {
       if(error) {
@@ -58,7 +58,7 @@ const Chat = ({ location }) => {
     <div className="outerContainer">
       <div className="container">
           <InfoBar room={room} />
-          <Messages messages={messages} />
+          <Messages messages={messages} name={name} />
           <Input sendMessage={sendMessage} setMessage={setMessage} message={message} />
       </div>
     </div>

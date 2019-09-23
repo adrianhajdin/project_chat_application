@@ -5,7 +5,6 @@
   color: white;
   box-sizing: border-box;
   display: inline-block;
-  overflow: auto;
 }
 
 .messageTextOne {
@@ -19,14 +18,20 @@
 
 .messageBoxTwo {
   background: #2979FF;
-  border-radius: 14px 14px 0 14px;
+  border-radius: 20px;
+  padding: 5px 20px;
+  color: white;
+  box-sizing: border-box;
+  display: inline-block;
 }
 
 .messageTextTwo {
   font-family: Helvetica;
+  width: 100%;
   font-size: 12px;
-  color: #FFFFFF;
+  color: white;
   letter-spacing: 0;
+  float: left;
 }
 
 .timeMessage {
@@ -34,4 +39,10 @@
   font-size: 10px;
   color: #828282;
   letter-spacing: 0.3px;
+}
+
+.messageContainerTwo {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 3px;
 }
