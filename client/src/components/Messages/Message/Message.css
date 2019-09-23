@@ -46,3 +46,9 @@
   justify-content: flex-end;
   margin-top: 3px;
 }
+
+.messageContainerOne {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 3px;
+}

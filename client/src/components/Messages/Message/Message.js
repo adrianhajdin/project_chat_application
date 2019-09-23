@@ -5,8 +5,6 @@ import './Message.css';
 const Message = ({ message: { text, user }, name }) => {
   let isSentByCurrentUser = false;
 
-  console.log(name, user)
-
   if(user === name) {
     isSentByCurrentUser = true;
     console.log('[Message was sent by YOU]')
@@ -22,9 +20,11 @@ const Message = ({ message: { text, user }, name }) => {
         </div>
       )
       : (
+        <div className="messageContainerOne">
           <div className="messageBoxOne">
             <p className="messageTextOne">{text}</p>
           </div>
+        </div>
       )
   );
 }
