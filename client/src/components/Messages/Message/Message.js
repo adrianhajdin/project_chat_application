@@ -12,20 +12,22 @@ const Message = ({ message: { text, user }, name }) => {
 
   return (
     isSentByCurrentUser
-    ? (
-      <div className="messageContainerTwo">
-        <div className="messageBoxTwo">
-          <p className="messageTextTwo">{text}</p>
-        </div>
-        </div>
-      )
-      : (
-        <div className="messageContainerOne">
-          <div className="messageBoxOne">
-            <p className="messageTextOne">{text}</p>
+      ? (
+        <div className="messageContainerTwo">
+          <p className="sentByText pr-10 ">{name}</p>
+          <div className="messageBoxTwo">
+            <p className="messageTextTwo">{text}</p>
           </div>
         </div>
-      )
+        )
+        : (
+          <div className="messageContainerOne">
+            <div className="messageBoxOne">
+              <p className="messageTextOne">{text}</p>
+            </div>
+            <p className="sentByText pl-10 ">{user}</p>
+          </div>
+        )
   );
 }
 

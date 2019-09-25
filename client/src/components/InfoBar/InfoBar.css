@@ -1,7 +1,7 @@
 .infoBar {
   background: #2979FF;
   border-radius: 4px 4px 0 0;
-  height: 10%;
+  height: 60px;
   align-self: flex-start;
   width: 100%;
   display: flex;

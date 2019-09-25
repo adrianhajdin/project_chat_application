@@ -1,3 +1,7 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .messageBoxOne {
   background: #F3F3F3;
   border-radius: 20px;
@@ -5,15 +9,16 @@
   color: white;
   box-sizing: border-box;
   display: inline-block;
+  max-width: 80%;
 }
 
 .messageTextOne {
-  font-family: Helvetica;
   width: 100%;
-  font-size: 12px;
   color: #353535;
   letter-spacing: 0;
   float: left;
+  font-size: 1.1em;
+  word-wrap: break-word;
 }
 
 .messageBoxTwo {
@@ -23,22 +28,16 @@
   color: white;
   box-sizing: border-box;
   display: inline-block;
+  max-width: 80%;
 }
 
 .messageTextTwo {
-  font-family: Helvetica;
   width: 100%;
-  font-size: 12px;
   color: white;
   letter-spacing: 0;
   float: left;
-}
-
-.timeMessage {
-  font-family: Helvetica;
-  font-size: 10px;
-  color: #828282;
-  letter-spacing: 0.3px;
+  font-size: 1.1em;
+  word-wrap: break-word;
 }
 
 .messageContainerTwo {
@@ -51,4 +50,20 @@
   display: flex;
   justify-content: flex-start;
   margin-top: 3px;
+}
+
+.sentByText {
+  display: flex;
+  align-items: center;
+  font-family: Helvetica;
+  color: #828282;
+  letter-spacing: 0.3px;
+}
+
+.pl-10 {
+  padding-left: 10px;
+}
+
+.pr-10 {
+  padding-right: 10px;
 }

@@ -13,6 +13,7 @@ let socket;
 const Chat = ({ location }) => {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
+  const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const ENDPOINT = 'localhost:5000';
@@ -37,8 +38,8 @@ const Chat = ({ location }) => {
       setMessages([...messages, message ]);
     });
 
-    socket.on('roomData', ({ room, users }) => {
-      console.log(room, users)
+    socket.on('roomData', ({ users }) => {
+      setUsers(users);
     })
 
     return () => {
@@ -60,6 +61,16 @@ const Chat = ({ location }) => {
           <InfoBar room={room} />
           <Messages messages={messages} name={name} />
           <Input sendMessage={sendMessage} setMessage={setMessage} message={message} />
+      </div>
+      <div className="textContainer">
+        <h1>Realtime Chat Application 💬</h1>
+        <h2>Made with love using Socket.IO ❤️</h2>
+        <h2>Try it out right now! ⬅️</h2>
+        {
+          users
+            ? <h2>Currently in this room: {users.map(({name}) => <div>{name}</div>)}</h2>
+            : null
+        }
       </div>
     </div>
   );

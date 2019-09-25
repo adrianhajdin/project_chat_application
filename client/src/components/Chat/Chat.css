@@ -12,7 +12,7 @@ html, body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #121212;
+  background-color: #1A1A1D;
 }
 
 .container {
@@ -24,6 +24,14 @@ html, body {
   width: 35%;
   flex-direction: column;
   justify-content: space-between
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  color: white;
+  height: 60%;
 }
 
 .messages {

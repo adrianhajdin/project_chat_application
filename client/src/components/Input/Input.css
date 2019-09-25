@@ -4,6 +4,7 @@
   border-radius: 0;
   padding: 5%;
   width: 100%;
+  font-size: 1.2em;
 }
 
 input:focus, textarea:focus, select:focus{
@@ -11,5 +12,5 @@ input:focus, textarea:focus, select:focus{
 }
 
 .form {
-  border-top: 1px solid #D3D3D3;
+  border-top: 2px solid #D3D3D3;
 }

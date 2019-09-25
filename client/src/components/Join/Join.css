@@ -4,21 +4,23 @@
   text-align: center;
   height: 100vh;
   align-items: center;
-  background-color: #121212;
+  background-color: #1A1A1D;
 }
 
 .joinInnerContainer {
-  width: 30%;
+  width: 20%;
 }
 
 .joinInput {
   border-radius: 0;
-  padding: 10px;
+  padding: 15px 20px;
   width: 100%;
 }
 
 .heading {
   color: white;
+  font-size: 2.5em;
+  margin-bottom: 10px;
 }
 
 .button {
@@ -41,4 +43,8 @@
   .joinInnerContainer {
     width: 90%;
   }
+}
+
+button:focus {
+  outline:0;
 }
