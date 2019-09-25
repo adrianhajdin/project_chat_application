@@ -68,7 +68,12 @@ const Chat = ({ location }) => {
         <h2>Try it out right now! ⬅️</h2>
         {
           users
-            ? <h2>Currently in this room: {users.map(({name}) => <div>{name}</div>)}</h2>
+            ? (
+              <div>
+                <h2>Currently in this room:</h2>
+                <h2>{users.map(({name}) => <div>{name}</div>)}</h2>
+              </div>
+            )
             : null
         }
       </div>

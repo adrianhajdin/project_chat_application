@@ -40,9 +40,14 @@ body {
   word-wrap: break-word;
 }
 
+.messageTextTwo img {
+  vertical-align: middle;
+}
+
 .messageContainerTwo {
   display: flex;
   justify-content: flex-end;
+  padding: 0 5%;
   margin-top: 3px;
 }
 
@@ -50,6 +55,7 @@ body {
   display: flex;
   justify-content: flex-start;
   margin-top: 3px;
+  padding: 0 5%;
 }
 
 .sentByText {

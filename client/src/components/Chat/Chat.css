@@ -35,7 +35,8 @@ html, body {
 }
 
 .messages {
-  margin: 5%;
+  padding: 5% 0;
+  overflow: auto;
   flex: auto;
 }
 
