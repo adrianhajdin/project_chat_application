@@ -6,6 +6,8 @@ import Messages from '../Messages/Messages';
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
 
+import onlineIcon from '../../icons/onlineIcon.png';
+
 import './Chat.css';
 
 let socket;
@@ -69,10 +71,19 @@ const Chat = ({ location }) => {
         {
           users
             ? (
-              <div>
-                <h2>Currently in this room:</h2>
-                <h2>{users.map(({name}) => <div>{name}</div>)}</h2>
-              </div>
+              <>
+                <h2>Currently chatting:</h2>
+                <div className="activeContainer">
+                  <h2>
+                    {users.map(({name}) => (
+                      <div key={name} className="activeContainer">
+                        {name}
+                        <img alt="Online Icon" src={onlineIcon}/>
+                      </div>
+                    ))}
+                  </h2>
+                </div>
+              </>
             )
             : null
         }

@@ -40,6 +40,15 @@ html, body {
   flex: auto;
 }
 
+.activeContainer {
+  display: flex;
+  align-items: center;
+}
+
+.activeContainer img {
+  padding-left: 10px;
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
   .container {
     width: 100%;

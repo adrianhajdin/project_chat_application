@@ -20,7 +20,8 @@
 .heading {
   color: white;
   font-size: 2.5em;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
 }
 
 .button {
