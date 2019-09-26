@@ -10,8 +10,6 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-const PORT = process.env.port || 5000;
-
 app.use(router);
 
 io.on('connect', (socket) => {
@@ -48,4 +46,4 @@ io.on('connect', (socket) => {
   })
 });
 
-server.listen(PORT, () => console.log(`Server has started on port ${PORT}`));
+server.listen(process.env.PORT || 5000, () => console.log(`Server has started.`));
