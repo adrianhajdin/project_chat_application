@@ -4,7 +4,6 @@ import io from "socket.io-client";
 
 import Messages from '../Messages/Messages';
 import InfoBar from '../InfoBar/InfoBar';
-import Input from '../Input/Input';
 
 import onlineIcon from '../../icons/onlineIcon.png';
 
@@ -62,7 +61,17 @@ const Chat = ({ location }) => {
       <div className="container">
           <InfoBar room={room} />
           <Messages messages={messages} name={name} />
-          <Input sendMessage={sendMessage} setMessage={setMessage} message={message} />
+          <form className="form">
+            <input
+              className="input"
+              type="text"
+              placeholder="Type a message..."
+              value={message}
+              onChange={({ target: { value } }) => setMessage(value)}
+              onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
+            />
+            <button className="buttonSend" onClick={e => sendMessage(e)}>Send</button>
+          </form>
       </div>
       <div className="textContainer">
         <h1>Realtime Chat Application 💬</h1>
