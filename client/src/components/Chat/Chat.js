@@ -17,7 +17,7 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = 'localhost:5000';
+  const ENDPOINT = 'https://project-chat-application.herokuapp.com/';
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -53,7 +53,9 @@ const Chat = ({ location }) => {
   const sendMessage = (event) => {
     event.preventDefault();
 
-    socket.emit('sendMessage', message, () => setMessage(''));
+    if(message) {
+      socket.emit('sendMessage', message, () => setMessage(''));
+    }
   }
 
   return (
@@ -74,14 +76,16 @@ const Chat = ({ location }) => {
           </form>
       </div>
       <div className="textContainer">
-        <h1>Realtime Chat Application 💬</h1>
-        <h2>Made with love using Socket.IO ❤️</h2>
-        <h2>Try it out right now! ⬅️</h2>
+        <div>
+          <h1>Realtime Chat Application <span role="img" aria-label="emoji">💬</span></h1>
+          <h2>Created with React, Express, Node and Socket.IO <span role="img" aria-label="emoji">❤️</span></h2>
+          <h2>Try it out right now! <span role="img" aria-label="emoji">⬅️</span></h2>
+        </div>
         {
           users
             ? (
-              <>
-                <h2>Currently chatting:</h2>
+              <div>
+                <h1>People currently chatting:</h1>
                 <div className="activeContainer">
                   <h2>
                     {users.map(({name}) => (
@@ -92,7 +96,7 @@ const Chat = ({ location }) => {
                     ))}
                   </h2>
                 </div>
-              </>
+              </div>
             )
             : null
         }

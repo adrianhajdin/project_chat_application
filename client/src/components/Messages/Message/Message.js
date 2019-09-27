@@ -11,8 +11,6 @@ const Message = ({ message: { text, user }, name }) => {
     isSentByCurrentUser = true;
   }
 
-  // promijeniti
-
   return (
     isSentByCurrentUser
       ? (

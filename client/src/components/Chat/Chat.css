@@ -32,6 +32,7 @@ html, body {
   margin-left: 100px;
   color: white;
   height: 60%;
+  justify-content: space-between;
 }
 
 .messages {
@@ -86,4 +87,8 @@ input:focus, textarea:focus, select:focus{
   display: inline-block;
   border: none;
   width: 20%;
+}
+
+.textContainer h1 {
+  margin-bottom: 0px;
 }
