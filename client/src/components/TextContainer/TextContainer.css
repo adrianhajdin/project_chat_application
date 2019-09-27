@@ -13,6 +13,11 @@
   margin-bottom: 50%;
 }
 
+.activeItem {
+  display: flex;
+  align-items: center;
+}
+
 .activeContainer img {
   padding-left: 10px;
 }
