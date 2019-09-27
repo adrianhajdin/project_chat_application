@@ -1,4 +1,5 @@
 html, body {
+  font-family: 'Roboto', sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -16,38 +17,13 @@ html, body {
 }
 
 .container {
-  background: #FFFFFF;
-  box-shadow: 0 0 20px 0 rgba(0,0,0,0.10);
-  border-radius: 8px 8px 0 0;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border-radius: 8px;
   height: 60%;
   width: 35%;
-  flex-direction: column;
-  justify-content: space-between
-}
-
-.textContainer {
-  display: flex;
-  flex-direction: column;
-  margin-left: 100px;
-  color: white;
-  height: 60%;
-  justify-content: space-between;
-}
-
-.messages {
-  padding: 5% 0;
-  overflow: auto;
-  flex: auto;
-}
-
-.activeContainer {
-  display: flex;
-  align-items: center;
-}
-
-.activeContainer img {
-  padding-left: 10px;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
@@ -55,40 +31,4 @@ html, body {
     width: 100%;
     height: 100%;
   }
-
-  .textContainer {
-    display: none;
-  }
-}
-
-.input {
-  border: none;
-  border-radius: 0;
-  padding: 5%;
-  width: 80%;
-  font-size: 1.2em;
-}
-
-input:focus, textarea:focus, select:focus{
-  outline: none;
-}
-
-.form {
-  display: flex;
-  border-top: 2px solid #D3D3D3;
-}
-
-.buttonSend {
-  color: #fff !important;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: #2979FF;
-  padding: 20px;
-  display: inline-block;
-  border: none;
-  width: 20%;
-}
-
-.textContainer h1 {
-  margin-bottom: 0px;
 }
