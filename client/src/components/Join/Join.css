@@ -51,9 +51,15 @@ html, body {
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
+  .joinOuterContainer {
+    height: 100%;
+  }
+
   .joinInnerContainer {
     width: 90%;
   }
+
+
 }
 
 button:focus {
