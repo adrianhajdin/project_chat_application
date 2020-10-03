@@ -1,5 +1,6 @@
-html, body {
-  font-family: 'Roboto', sans-serif;
+html,
+body {
+  font-family: "Roboto", sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -18,7 +19,8 @@ html, body {
   text-align: center;
   height: 100vh;
   align-items: center;
-  background-color: #1A1A1D;
+  background-color: #1c1a1d;
+  background-image: url("/public/bg.png");
 }
 
 .joinInnerContainer {
@@ -33,21 +35,22 @@ html, body {
 
 .heading {
   color: white;
-  font-size: 2.5em;
+  font-size: 3.5em;
   padding-bottom: 10px;
   border-bottom: 2px solid white;
 }
 
 .button {
-    color: #fff !important;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: #2979FF;
-    padding: 20px;
-    border-radius: 5px;
-    display: inline-block;
-    border: none;
-    width: 100%;
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #29ff89;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  font-size: 1.2em;
 }
 
 .mt-20 {
@@ -62,8 +65,6 @@ html, body {
   .joinInnerContainer {
     width: 90%;
   }
-
-
 }
 
 button:focus {
