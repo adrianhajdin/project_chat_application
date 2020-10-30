@@ -1,15 +1,13 @@
 # Realtime Chat Application
 
-### [Live Site](https://realtime-chat-application.netlify.com)
-
 ![Chat Application](https://i.ytimg.com/vi/ZwFA3YMfkoc/maxresdefault.jpg)
 
 ## Introduction
 This is a code repository for the corresponding video tutorial. 
 
-In this video, we will create a full Realtime Chat Application. We're going to use  React on the front end, with NodeJS + Socket.io web socket library on the back end. 
+Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called "Memories" and it is a simple social media app that allows users to post interesting events that happened in their lives.
 
-By the end of this video, you will have a strong understanding of how to send and receive messages using web sockets and Socket.io to make any real-time application.
+By the end of this video, you will have a strong understanding of how the MERN stack works.
 
 Setup:
-- run ```npm i && npm start``` for both client and server side to start the development server
+- run ```npm i && npm start``` for both client and server side to start the app
