@@ -2,6 +2,8 @@
 
 ### [Live Site](https://realtime-chat-application.netlify.com)
 
+### How does the finished app look like - 
+
 ![Chat Application](https://i.ytimg.com/vi/ZwFA3YMfkoc/maxresdefault.jpg)
 
 ## Introduction
