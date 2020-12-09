@@ -4,7 +4,7 @@
 
 ### How does the finished app look like - 
 
-![Chat Application](https://i.ytimg.com/vi/ZwFA3YMfkoc/maxresdefault.jpg)
+![Chat Application](https://github.com/Prashoon123/project_chat_application/blob/master/ImagesForReadme/img-chat-page.png)
 
 ## Introduction
 This is a code repository for the corresponding video tutorial. 
