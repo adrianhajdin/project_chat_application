@@ -4,7 +4,9 @@
 
 ### How does the finished app look like - 
 
-![Chat Application](https://github.com/Prashoon123/project_chat_application/blob/master/ImagesForReadme/img-chat-page.png)
+![Login Page](https://github.com/Prashoon123/project_chat_application/blob/master/ImagesForReadme/img-login-page.png)
+
+![Chat Page](https://github.com/Prashoon123/project_chat_application/blob/master/ImagesForReadme/img-chat-page.png)
 
 ## Introduction
 This is a code repository for the corresponding video tutorial. 
