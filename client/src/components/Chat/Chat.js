@@ -9,9 +9,9 @@ import Input from '../Input/Input';
 
 import './Chat.css';
 
-const ENDPOINT = 'https://project-chat-application.herokuapp.com/';
 
 let socket;
+const ENDPOINT = 'https://project-chat-application.herokuapp.com/';
 
 const Chat = ({ location }) => {
   const [name, setName] = useState('');
