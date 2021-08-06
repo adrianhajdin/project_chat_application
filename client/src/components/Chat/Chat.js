@@ -9,6 +9,7 @@ import Input from '../Input/Input';
 
 import './Chat.css';
 
+// The ENDPOINT is already here
 const ENDPOINT = 'https://project-chat-application.herokuapp.com/';
 
 let socket;
