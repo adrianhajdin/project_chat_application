@@ -4,7 +4,7 @@ const userRepo = require("./user.repository");
 
 module.exports = {
   async list(first, offset) {
-    const users = await userRepo.listUsers(first, offset);
+    const users = await userRepo.list(first, offset);
     return users;
   },
 

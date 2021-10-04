@@ -1,14 +1,38 @@
-const list = async (first, offset) => {};
+const User = require("./user.model");
 
-const create = async (userData) => {};
+const list = async (first, offset) => {
+  const users = await User.findAll({ where: {} });
 
-const update = async (id, userData) => {};
+  return users;
+};
 
-const deleteUser = async (id) => {};
+const create = async (userData) => {
+  const user = await User.create(userData);
 
-const findOneById = async (id) => {};
+  return user;
+};
 
-const findOneByEmail = async (email) => {};
+const update = async (id, userData) => {
+  const user = await User.update(userData, { where: { id: id } });
+
+  return user;
+};
+
+const deleteUser = async (id) => {
+  const num = await User.destroy({ where: { id: id } });
+};
+
+const findOneById = async (id) => {
+  const user = await User.findOne({ where: { id } });
+  if (user == null) throw new Error(`User With id: ${id} not found`);
+  return user;
+};
+
+const findOneByEmail = async (email) => {
+  const user = await User.findOne({ where: { email } });
+
+  return user;
+};
 
 module.exports = {
   list,

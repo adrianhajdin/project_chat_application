@@ -10,6 +10,7 @@ const passport = require("passport");
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 const errorHanlder = require("./src/config/errorHandler");
+const db = require("./database/db.connection");
 
 require("./src/config/passport");
 
@@ -34,6 +35,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // cors
 app.use(cors());
+
+// db connection
+db.sequelize.sync();
 
 // require the routes
 require("./src/config/routes")(app);
