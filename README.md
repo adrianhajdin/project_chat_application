@@ -12,7 +12,7 @@ In this video, we will create a full Realtime Chat Application. We're going to u
 By the end of this video, you will have a strong understanding of how to send and receive messages using web sockets and Socket.io to make any real-time application.
 
 ## Stay up to date with new projects
-New major projects coming soon, subscribe to the mailing list to stay up to date https://javascriptmastery.eo.page/mailing-list.
+New major projects coming soon, subscribe to the mailing list to stay up to date https://resource.jsmasterypro.com/newsletter
 
 Setup:
 - run ```npm i && npm start``` for both client and server side to start the development server
