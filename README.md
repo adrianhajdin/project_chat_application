@@ -14,4 +14,4 @@ By the end of this video, you will have a strong understanding of how to send an
 ## Launch your development career with project-based coaching - https://www.jsmastery.pro
 
 Setup:
-- run ```npm i && npm start``` for both client and server side to start the development server
+- run ```npm install && npm start``` for both client and server side to start the development server
