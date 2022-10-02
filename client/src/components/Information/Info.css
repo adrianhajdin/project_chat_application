@@ -1,0 +1,24 @@
+.OuterContainer {
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    height: 100vh;
+    align-items: center;
+    background-color: #1A1A1D; 
+  }
+  
+  .InnerContainer {
+    width: 75%;
+  }
+  
+  .text{
+    color: white;
+  }
+  
+  .about{
+    font-size:1.4em;
+  }
+  
+  .a{
+    color: white;
+  }

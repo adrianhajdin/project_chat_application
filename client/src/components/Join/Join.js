@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 import './Join.css';
 
@@ -20,6 +21,18 @@ export default function SignIn() {
         <Link onClick={e => (!name || !room) ? e.preventDefault() : null} to={`/chat?name=${name}&room=${room}`}>
           <button className={'button mt-20'} type="submit">Sign In</button>
         </Link>
+
+        <Link to="/info">
+          <Button
+            class ="button"
+            style={{
+            borderRadius: 7,
+            backgroundColor: "#333339",
+            fontSize: "12px" }}
+            >About Us
+          </Button>
+        </Link>
+
       </div>
     </div>
   );
