@@ -38,6 +38,14 @@ io.on('connect', (socket) => {
     callback();
   });
 
+  socket.on('typing', (userName, callback) => {
+    const user = getUser(socket.id);
+
+    io.to(user.room).emit('typing', { userName: userName });
+
+    // callback();
+  });
+
   socket.on('disconnect', () => {
     const user = removeUser(socket.id);
 
