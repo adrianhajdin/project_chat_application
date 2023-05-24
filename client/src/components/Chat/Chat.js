@@ -13,12 +13,17 @@ const ENDPOINT = process.env.REACT_APP_SERVER_ADDRESS;
 
 let socket;
 
+// The async function that clears the typing user name
+let clearTypingUser;
+
 const Chat = ({ location }) => {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const [typingUser, setTypingUser] = useState('');
+
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -33,17 +38,39 @@ const Chat = ({ location }) => {
         alert(error);
       }
     });
-  }, [ENDPOINT, location.search]);
+  }, [location.search]);
   
   useEffect(() => {
     socket.on('message', message => {
       setMessages(messages => [ ...messages, message ]);
     });
+
+
+    socket.on('typing', ({userName}) => {
+
+      // notify all the users in the room except the typing user
+      const { name } = queryString.parse(location.search);
+      if (userName === name) {
+        return;
+      }
+
+      // The username will be setted to the currunt typing user
+      // No need to be cleared
+      clearTimeout(clearTypingUser);
+
+      setTypingUser(userName);
+
+      // clear the username after 1000 secs
+      clearTypingUser = setTimeout(() => {
+        setTypingUser('');
+      }, 1000);
+
+    });
     
     socket.on("roomData", ({ users }) => {
       setUsers(users);
     });
-}, []);
+}, [location.search]);
 
   const sendMessage = (event) => {
     event.preventDefault();
@@ -53,12 +80,16 @@ const Chat = ({ location }) => {
     }
   }
 
+  const theUserIsTyping = () => {
+    socket.emit('typing', name);
+  }
+
   return (
     <div className="outerContainer">
       <div className="container">
-          <InfoBar room={room} />
+          <InfoBar room={room} typingUser={typingUser} />
           <Messages messages={messages} name={name} />
-          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} theUserIsTyping={theUserIsTyping} />
       </div>
       <TextContainer users={users}/>
     </div>
