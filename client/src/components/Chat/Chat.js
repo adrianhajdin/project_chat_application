@@ -13,8 +13,10 @@ const ENDPOINT = process.env.REACT_APP_SERVER_ADDRESS;
 
 let socket;
 
-// The async function that clears the typing user name
-let clearTypingUser;
+
+// The ID of function that tills the server that this user stoped typing.
+// This function is executed after 1sc from the last change on the msg input field.
+let stopedTypingFunId;
 
 const Chat = ({ location }) => {
   const [name, setName] = useState('');
@@ -23,7 +25,6 @@ const Chat = ({ location }) => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [typingUser, setTypingUser] = useState('');
-
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -46,31 +47,28 @@ const Chat = ({ location }) => {
     });
 
 
-    socket.on('typing', ({userName}) => {
-
+    socket.on('startedTyping', ({userName}) => {
       // notify all the users in the room except the typing user
       const { name } = queryString.parse(location.search);
-      if (userName === name) {
-        return;
+      if (userName !== name) {
+        setTypingUser(userName);
       }
-
-      // The username will be setted to the currunt typing user
-      // No need to be cleared
-      clearTimeout(clearTypingUser);
-
-      setTypingUser(userName);
-
-      // clear the username after 1000 secs
-      clearTypingUser = setTimeout(() => {
-        setTypingUser('');
-      }, 1000);
-
     });
+
+
+
+    socket.on('stopedTyping', ({userName}) => {
+      setTypingUser((currentTypingUser) =>  (userName === currentTypingUser ?
+          '' : // the current typing stoped typing
+          currentTypingUser)  // the msg is irrelavent to the current typing user
+        );
+    });
+
     
     socket.on("roomData", ({ users }) => {
       setUsers(users);
     });
-}, [location.search]);
+  }, [location.search]);
 
   const sendMessage = (event) => {
     event.preventDefault();
@@ -80,8 +78,16 @@ const Chat = ({ location }) => {
     }
   }
 
-  const theUserIsTyping = () => {
-    socket.emit('typing', name);
+  const theUserIsTyping = (msgLen) => {
+    clearTimeout(stopedTypingFunId);
+
+    if (msgLen%15 === 0 || msgLen === 1) {    // Send an update to the server every  
+      socket.emit('startedTyping', name);     // 3 words and at the beginning.
+    }
+
+    stopedTypingFunId = setTimeout(() => {
+      socket.emit('stopedTyping', name);
+    }, 1000);
   }
 
   return (

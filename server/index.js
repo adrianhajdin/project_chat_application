@@ -38,12 +38,15 @@ io.on('connect', (socket) => {
     callback();
   });
 
-  socket.on('typing', (userName, callback) => {
+  socket.on('startedTyping', (userName) => {
     const user = getUser(socket.id);
 
-    io.to(user.room).emit('typing', { userName: userName });
+    io.to(user.room).emit('startedTyping', { userName: userName });
+  });
 
-    // callback();
+  socket.on('stopedTyping', (userName) => {
+    const user = getUser(socket.id);
+    io.to(user.room).emit('stopedTyping', { userName: userName });
   });
 
   socket.on('disconnect', () => {
