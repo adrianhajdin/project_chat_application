@@ -8,11 +8,19 @@ const Message = ({ message: { text, user }, name }) => {
   let isSentByCurrentUser = false;
 
   const trimmedName = name.trim().toLowerCase();
-
   if(user === trimmedName) {
     isSentByCurrentUser = true;
   }
-
+  if(user === 'admin'){
+    return(
+      <div className="messageContainer" style={{justifyContent:'center'}}>
+        <div className="messageBox" style={{backgroundColor:'rgb(169 159 159 / 40%)'}}>
+          <span className="sentText pl-10 ">{user}</span>
+          <p className="messageText colorDark">{ReactEmoji.emojify(text)}</p>
+        </div>
+      </div>
+    )
+  }
   return (
     isSentByCurrentUser
       ? (
