@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  check:
+  check-client:
     name: Check Client
     runs-on: ubuntu-latest
     steps:
@@ -32,7 +32,9 @@ jobs:
         run: npm prettier
       - name: Unit & Integration tests
         run: npm test
-  name: Check Server
+
+  check-server:      
+    name: Check Server
     runs-on: ubuntu-latest
     steps:
       - name: Cd to server
