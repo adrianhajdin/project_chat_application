@@ -1,0 +1,53 @@
+name: Check
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - develop
+      - client-dev
+      - server-dev
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    name: Check Client
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cd to client
+        run: cd ./client
+      - uses: actions/checkout@v4
+      - run: echo "node_version=$(cat .github/nodejs.version)" >> $GITHUB_ENV
+      - name: "use node ${{ env.node_version }}"
+        uses: actions/setup-node@v3
+        with:
+          node-version: "${{ env.node_version }}"
+      - name: Install dependencies
+        run: npm install --frozen-lockfile
+      - name: Lint check
+        run: npm lint
+      - name: Format check
+        run: npm prettier
+      - name: Unit & Integration tests
+        run: npm test
+  name: Check Server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cd to server
+        run: cd ./server
+      - uses: actions/checkout@v4
+      - run: echo "node_version=$(cat .github/nodejs.version)" >> $GITHUB_ENV
+      - name: "use node ${{ env.node_version }}"
+        uses: actions/setup-node@v3
+        with:
+          node-version: "${{ env.node_version }}"
+      - name: Install dependencies
+        run: npm install --frozen-lockfile
+      - name: Lint check
+        run: npm lint
+      - name: Format check
+        run: npm prettier
+      - name: Unit & Integration tests
+        run: npm test
