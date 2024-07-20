@@ -1,0 +1,92 @@
+Compiled with problems:
+×
+ERROR
+[eslint] 
+src/App.js
+  Line 1:48:  Strings must use singlequote                                                                           quotes
+  Line 6:1:   More than 1 blank line not allowed                                                                     no-multiple-empty-lines
+  Line 7:19:  Unexpected block statement surrounding arrow body; move the returned value immediately after the `=>`  arrow-body-style
+  Line 14:2:  Missing semicolon                                                                                      semi
+
+src/components/Chat/Chat.js
+  Line 1:44:   Strings must use singlequote                                            quotes
+  Line 3:16:   Strings must use singlequote                                            quotes
+  Line 16:17:  'location' is missing in props validation                               react/prop-types
+  Line 24:13:  'name' is already declared in the upper scope on line 17 column 10      no-shadow
+  Line 24:19:  'room' is already declared in the upper scope on line 18 column 10      no-shadow
+  Line 24:55:  'location.search' is missing in props validation                        react/prop-types
+  Line 29:18:  Missing semicolon                                                       semi
+  Line 32:7:   Expected space(s) after "if"                                            keyword-spacing
+  Line 36:26:  'location.search' is missing in props validation                        react/prop-types
+  Line 37:1:   Trailing spaces not allowed                                             no-trailing-spaces
+  Line 39:26:  Expected parentheses around arrow function argument                     arrow-parens
+  Line 39:26:  'message' is already declared in the upper scope on line 20 column 10   no-shadow
+  Line 40:19:  Expected parentheses around arrow function argument                     arrow-parens
+  Line 40:19:  'messages' is already declared in the upper scope on line 21 column 10  no-shadow
+  Line 40:32:  There should be no space after '['                                      array-bracket-spacing
+  Line 40:53:  There should be no space before ']'                                     array-bracket-spacing
+  Line 42:1:   Trailing spaces not allowed                                             no-trailing-spaces
+  Line 43:15:  Strings must use singlequote                                            quotes
+  Line 43:30:  'users' is already declared in the upper scope on line 19 column 10     no-shadow
+  Line 46:1:   Expected indentation of 2 spaces but found 0                            indent
+  Line 51:5:   Expected space(s) after "if"                                            keyword-spacing
+  Line 54:4:   Missing semicolon                                                       semi
+  Line 59:11:  Expected indentation of 8 space characters but found 10                 react/jsx-indent
+  Line 60:11:  Expected indentation of 8 space characters but found 10                 react/jsx-indent
+  Line 61:11:  Expected indentation of 8 space characters but found 10                 react/jsx-indent
+  Line 63:35:  A space is required before closing bracket                              react/jsx-tag-spacing
+  Line 66:2:   Missing semicolon                                                       semi
+
+src/components/InfoBar/InfoBar.js
+  Line 8:20:   'room' is missing in props validation          react/prop-types
+  Line 20:24:  Newline required at end of file but not found  eol-last
+
+src/components/Input/Input.js
+  Line 5:18:   'setMessage' is missing in props validation                    react/prop-types
+  Line 5:30:   'sendMessage' is missing in props validation                   react/prop-types
+  Line 5:43:   'message' is missing in props validation                       react/prop-types
+  Line 13:19:  Arrow function used ambiguously with a conditional expression  no-confusing-arrow
+  Line 13:19:  Expected parentheses around arrow function argument            arrow-parens
+  Line 15:5:   Missing an explicit type attribute for button                  react/button-has-type
+  Line 15:45:  Expected parentheses around arrow function argument            arrow-parens
+  Line 17:2:   Missing semicolon                                              semi
+  Line 19:22:  Newline required at end of file but not found                  eol-last
+
+src/components/Join/Join.js
+  Line 2:22:   Strings must use singlequote                                   quotes
+  Line 20:24:  Arrow function used ambiguously with a conditional expression  no-confusing-arrow
+  Line 20:24:  Expected parentheses around arrow function argument            arrow-parens
+  Line 21:29:  Curly braces are unnecessary here                              react/jsx-curly-brace-presence
+
+src/components/Messages/Message/Message.js
+  Line 7:20:   'message' is missing in props validation       react/prop-types
+  Line 7:31:   'message.text' is missing in props validation  react/prop-types
+  Line 7:37:   'message.user' is missing in props validation  react/prop-types
+  Line 7:45:   'name' is missing in props validation          react/prop-types
+  Line 10:28:  'name.trim' is missing in props validation     react/prop-types
+  Line 12:3:   Expected space(s) after "if"                   keyword-spacing
+  Line 25:1:   Expected indentation of 6 spaces but found 8   indent
+  Line 26:1:   Expected indentation of 6 spaces but found 8   indent
+  Line 33:1:   Expected indentation of 6 spaces but found 8   indent
+  Line 35:2:   Missing semicolon                              semi
+  Line 37:24:  Newline required at end of file but not found  eol-last
+
+src/components/Messages/Messages.js
+  Line 9:21:   'messages' is missing in props validation      react/prop-types
+  Line 9:31:   'name' is missing in props validation          react/prop-types
+  Line 11:15:  'messages.map' is missing in props validation  react/prop-types
+  Line 11:86:  A space is required before closing bracket     react/jsx-tag-spacing
+  Line 15:25:  Newline required at end of file but not found  eol-last
+
+src/components/TextContainer/TextContainer.js
+  Line 7:26:   'users' is missing in props validation         react/prop-types
+  Line 21:24:  'users.map' is missing in props validation     react/prop-types
+  Line 21:29:  A space is required after '{'                  object-curly-spacing
+  Line 21:34:  A space is required before '}'                 object-curly-spacing
+  Line 24:60:  A space is required before closing bracket     react/jsx-tag-spacing
+  Line 36:30:  Newline required at end of file but not found  eol-last
+
+src/index.js
+  Line 6:59:  Newline required at end of file but not found  eol-last
+
+Search for the keywords to learn more about each error.
