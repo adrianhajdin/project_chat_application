@@ -1,0 +1,15 @@
+.blueBtn {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #2979FF;
+    padding: 20px;
+    display: inline-block;
+    border: none;
+    transition: transform 2s;
+}
+
+.blueBtn:hover {
+    transition: background-color 3s linear;
+    background-color: #062c6e;
+}
