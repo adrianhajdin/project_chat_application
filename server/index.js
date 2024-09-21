@@ -48,4 +48,15 @@ io.on('connect', (socket) => {
   })
 });
 
-server.listen(process.env.PORT || 5000, () => console.log(`Server has started.`));
+const PORT = process.env.PORT || 5001;
+
+server.listen(PORT, () => {
+  console.log(`Server has started on port ${PORT}`);
+}).on('error', (e) => {
+  if (e.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} is already in use. Try a different port.`);
+  } else {
+    console.error(`An error occurred: ${e.message}`);
+  }
+  process.exit(1);
+});

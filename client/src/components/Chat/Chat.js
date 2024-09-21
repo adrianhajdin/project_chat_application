@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
 import queryString from 'query-string';
+import React, { useEffect, useState } from "react";
 import io from "socket.io-client";
 
-import TextContainer from '../TextContainer/TextContainer';
-import Messages from '../Messages/Messages';
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
+import Messages from '../Messages/Messages';
+import TextContainer from '../TextContainer/TextContainer';
 
 import './Chat.css';
 
-const ENDPOINT = 'https://project-chat-application.herokuapp.com/';
+const ENDPOINT = 'http://localhost:5001/';
 
 let socket;
 
