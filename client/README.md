@@ -2,6 +2,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+### Legacy node version
+
+You'll need older version of node.js to run this project.
+
+1. Install nvm (Node Version Manager) `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash`
+2. Install an LTS version of Node.js (e.g., 18.x): `nvm install 18`
+3. Set the installed version as the default: `nvm use 18`
+4. Verify the Node.js version: `node -v` (should return v18.x)
+
 In the project directory, you can run:
 
 ### `npm start`
