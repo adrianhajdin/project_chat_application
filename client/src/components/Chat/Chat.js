@@ -53,6 +53,12 @@ const Chat = ({ location }) => {
     }
   }
 
+  useEffect(() => {
+    socket.on('newMessage', ({ conversationId, message }) => {
+      // Handle new message event
+    });
+  }, []);
+
   return (
     <div className="outerContainer">
       <div className="container">

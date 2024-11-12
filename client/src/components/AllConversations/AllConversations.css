@@ -1,0 +1,14 @@
+.allConversations {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.conversation {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.conversation.bold {
+  font-weight: bold;
+}
