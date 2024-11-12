@@ -35,6 +35,9 @@ io.on('connect', (socket) => {
 
     io.to(user.room).emit('message', { user: user.name, text: message });
 
+    // Notify allconversations screen of new message
+    socket.broadcast.emit('newMessage', { conversationId: user.room, message });
+
     callback();
   });
 
