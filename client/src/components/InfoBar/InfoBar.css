@@ -8,13 +8,7 @@
   width: 100%;
 }
 
-.leftInnerContainer {
-  flex: 0.5;
-  display: flex;
-  align-items: center;
-  margin-left: 5%;
-  color: white;
-}
+
 
 .rightInnerContainer {
   display: flex;
