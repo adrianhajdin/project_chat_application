@@ -15,13 +15,6 @@ input:focus, textarea:focus, select:focus{
   outline: none;
 }
 
-.sendButton {
-  color: #fff !important;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: #2979FF;
-  padding: 20px;
-  display: inline-block;
-  border: none;
-  width: 20%;
+.sendBtnWidth {
+  width: 20% !important;
 }
