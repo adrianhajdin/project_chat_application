@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "dev" : "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
