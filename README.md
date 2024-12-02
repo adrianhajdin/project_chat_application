@@ -1,5 +1,5 @@
 # Realtime Chat Application
-
+This File is actually made by Adrian which is forked by Minahil12345 in order to learn and practice Git CLI concepts
 ### [Live Site](https://realtime-chat-application.netlify.com)
 
 ### [🌟 Become a top 1% Next.js developer in only one course](https://jsmastery.pro/next15)
