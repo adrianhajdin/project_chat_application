@@ -1,5 +1,5 @@
 # Realtime Chat Application
-
+This File is actually made by Adrian which is forked by Minahil12345 in order to learn and practice Git CLI concepts especially Forking, Commiting and Merging.
 ### [Live Site](https://realtime-chat-application.netlify.com)
 
 ### [🌟 Become a top 1% Next.js developer in only one course](https://jsmastery.pro/next15)
@@ -18,3 +18,33 @@ By the end of this video, you will have a strong understanding of how to send an
 
 Setup:
 - run ```npm i && npm start``` for both client and server side to start the development server
+Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+Installation
+BEFORE YOU INSTALL: please read the prerequisites
+
+Start with cloning this repo on your local machine:
+
+$ git clone https://github.com/ORG/PROJECT.git
+$ cd PROJECT
+To install and set up the library, run:
+
+$ npm install -S myLib
+Or if you prefer using Yarn:
+
+$ yarn add --dev myLib
+Usage
+Serving the app
+$ npm start
+Running the tests
+$ npm test
+Building a distribution version
+$ npm run build
+This task will create a distribution version of the project inside your local dist/ folder
+
+Serving the distribution version
+$ npm run serve:dist
+This will use lite-server for servign your already generated distribution version of the project.
+
+Note this requires Building a distribution version first.
