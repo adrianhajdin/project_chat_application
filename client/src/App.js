@@ -10,6 +10,8 @@ const App = () => {
     <Router>
       <Route path="/" exact component={Join} />
       <Route path="/chat" component={Chat} />
+      <Route path="/join" component={Join} />
+
     </Router>
   );
 }
